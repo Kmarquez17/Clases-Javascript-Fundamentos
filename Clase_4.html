@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">     
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+     
+<body>
+<script>}
+    const nombre = 'Kevin'
+    let totalkm=0;
+    
+    const dias = [
+        'lunes',
+        'martes',
+        'miercoles',
+        'jueves',
+        'viernes',
+        'sabado',
+        'domingo'
+    ]
+    
+    function correr(){
+        const min = 5;
+        const max = 15
+        return Math.round(Math.random() * (max - min) + (min));
+    }
+    
+    for(let i=0; i < dias.length ; i++){
+        const km = correr()
+        totalkm += km;
+        console.log(`El dia ${dias[i]}, ${nombre} corrrio ${km} km`)
+    }
+    const promedio = totalkm / dias.length;
+    console.log(`En la semana recorrio ${totalkm} km`);
+    console.log(`El promerdio semanal fue ${promedio.toFixed(2)}`)
+</script>
+     
+</body>
+</html>

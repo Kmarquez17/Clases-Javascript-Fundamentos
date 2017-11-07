@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">     
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+     
+<body>
+<script>    
+    const startWars = 'El despertar de la fuerza';
+    const NumstartWars = 13
+    
+    const nameKevin = 'Kevin';
+    const ageKevin = 20;
+        
+    const nameAlberto = 'Alberto';
+    const ageAlberto = 12;
+    
+    function llamar(name,age,adult=false){
+        if (age >= NumstartWars){
+            alert(`${name} puede pasar a ver ${startWars}`)
+        }else if(adult)
+            {
+                alert(`${name} puede pasar ver la pelicula ${startWars} aunque su edad sea ${age}, pero esta acompañado/a por un adulto`)
+            }
+            else{
+                alert(`${name} no puede ver ${startWars} por que tiene ${age} años y necesita tener ${NumstartWars}`)
+            }
+    }
+    
+    llamar(nameKevin,ageKevin);
+    llamar(nameAlberto,ageAlberto,true);
+    
+</script>
+</body>
+</html>

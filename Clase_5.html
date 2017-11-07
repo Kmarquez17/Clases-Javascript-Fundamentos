@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">     
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+     
+<body>
+     <script>
+         
+        let vidaG = 100;
+        let vidaS = 100;
+        
+        const min_pw = 5;
+        const max_pw = 12;
+         
+         const Ganador = () => vidaG > 0 
+         const ambosVivos = () => vidaG > 0 && vidaS > 0
+         const calcularGolpe = () => Math.round((Math.random() * (max_pw - min_pw)) + min_pw)
+         let round = 1;
+            while(ambosVivos()){
+                console.log(`Round ${round}`);
+                
+                const golpeG = calcularGolpe();
+                const golpeS = calcularGolpe();
+                
+                if(golpeG > golpeS){
+                    //Ataca GOKU
+                    console.log(`GOKU ataca a SUPERMAN con un golpe ${golpeG}`)
+                    vidaS -= golpeG
+                    console.log(`SUPERMAN dismuyo su vida a ${vidaS}`);
+                }
+                else if(golpeS > golpeG ){
+                    //Ataca SUPERMAN
+                    console.log(`SUPERMAN ataca a GOKU con un golpe ${golpeS}`)
+                    vidaG -= golpeS
+                    console.log(`GOKU disminuyo su vida a ${vidaG}`);
+                }
+                else if (golpeG == golpeS){
+                    console.log(`Ataques iguales nadie se hizo daño GOKU Ataco: ${golpeG} y SUPERMAN Ataco: ${golpeS}`)
+                }
+                round++;
+            }
+         
+         
+         if (Ganador()){
+             console.log(`GOKU gano la pelea. Su vida es de ${vidaG}`)
+         }else{
+             console.log(`SUPERMAN gano la pelea. Su vida es de ${vidaS}`);
+         }
+         console.log(`La cantidad de Round fueron ${round}`)
+     </script>
+</body>
+</html>

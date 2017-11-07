@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">     
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+     
+<body>
+    <script>
+        function platzom(str)
+        {
+            let trasladar=str;
+            const cantidad = str.length;
+            
+            //si la palabra termina en "ar", se le quitan esos dos caracteres
+            if(str.toLowerCase().endsWith('ar')){
+                trasladar = str.slice(0,-2);
+            }
+            //Si la palabra inicia con Z se le añade "pe" al final
+            if(str.toLowerCase().startsWith('z'))
+            {
+                trasladar += 'pe'
+            }
+            //Sí la palabra tiene mas 10 o mas letras  se debe partir a la mitad y unirla con un '-'
+            
+            if( cantidad >= 10){
+                const primero = trasladar.slice(0,Math.round(cantidad/2))
+                const segundo = trasladar.slice(Math.round(cantidad/2))
+                trasladar = `${primero}-${segundo}` ;
+            }
+            
+            //Si la palabra original es un palindromo ninguna de las reglas anterior cuenta, y se devuelve la misma palabra intercalando mayuscula y minuscula
+            const reverse = (str) => str.split('').reverse().join('')
+            
+            function minMay(str){
+                let trasladar = ' ';
+                let capitalize = true;
+                for(var i=0; i < cantidad; i++)
+                {
+                    const char= str.charAt(i);
+                    trasladar += capitalize ? char.toUpperCase() : char.toLowerCase()
+                    
+                    capitalize = !capitalize;
+                }
+                return trasladar;
+            }
+            
+            if(str == reverse(str)){
+                
+                return minMay(str);
+            }
+            return trasladar;
+        }
+        platzom("Programa");//Program
+        platzom("Zorro");//Zorrope
+        platzom("Zarpar");//Zarppe
+        platzom("Abecedario");//Abece-dario
+        platzom("sometemos");//SoMeTeMos
+    </script>
+</body>
+</html>

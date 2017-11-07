@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">     
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+     
+<body>
+    <script>
+        //Objetos 
+        const p1 = {
+            x: 0,
+            y: 4
+        }
+        
+        const p2 = {
+            x: 3,
+            y: 0 
+        }
+        
+        function distancia (p1,p2){
+            const x = p1.x - p2.x;
+            const y = p1.y - p2.y;
+            
+            return Math.sqrt(x*x+y*y)
+        }
+        
+        console.log(`Distancia ${distancia(p1,p2)}`)
+    </script>
+</body>
+</html>

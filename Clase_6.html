@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">     
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+     
+<body>
+    <script>
+        //Fecha Nac 01 de julio de 1997
+        const fnac = new Date(1997,7-1,01)
+        console.log(`Fecha de Nacimiento ${fnac}`)
+        
+        //Fecha Hoy
+        const hoy = new Date()
+        console.log(`Fecha de Hoy ${hoy}`)
+        
+        //Tiempo que han pasado desde YO naci
+        
+        const tiempo = hoy - fnac
+        console.log(`Tiempo trancurrido desde que Naci ${tiempo}`)
+        
+        //Tiempo en segundos
+        const tiempoSeg = tiempo/1000
+        console.log(`Tiempo en segundos ${tiempoSeg}`)
+        
+        //Tiempo en minuto 
+        const tiempoMin = tiempoSeg/60
+        console.log(`Tiempo en minuto ${tiempoMin}`)
+        
+        //Tiempo en HOras
+        const tiempoHrs = tiempoMin/60
+        console.log(`Tiempo en Hora ${tiempoHrs}`)
+        
+        //Proximo Cumpleaños
+        const proxAno = new Date(hoy.getFullYear(),fnac.getMonth(), fnac.getDate())        
+        console.log(`Proximo Cumpleaños ${proxAno}`)
+        
+        //Dias de la semana
+        const diasSemana = [
+            "Domingo",
+            "Lunes",
+            "Martes",
+            "Miercoles",
+            "Jueves",
+            "Viernes",
+            "Sabado"
+        ]
+        console.log(`Proximo Cumpleaños Español ${diasSemana[proxAno.getDay()]}`)
+        
+        
+    </script>
+</body>
+</html>
