@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">     
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+     
+<body>
+    <script>
+        
+        //Var -> Funciona dependiendo donde sea declarada si esta en el scope general ella puede ser usada por multiples funciones y si es definida
+        // dentro de una funcion trabaja general dentro de ella
+        //Const -> Funciona como cualquier constante de lenguaje de programacion y nunca es cambiable.
+        //let -> funciona en el scope siempre dentro de un bucle p 
+        var nombre = 'Kevin'
+        
+        function saludar10(nombre){
+            for(let i=0; i<10;  i++){
+                console.log(`Hola ${nombre}`);
+                console.log(`El valor de i es ${i}`)
+            }
+            console.log(`Hola ${nombre}`);
+            
+       
+        }
+    saludar10('Ana')
+    console.log(`Hola ${nombre}`);
+    
+    </script>
+</body>
+</html>
+
+
+86669

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">     
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+     
+<body>
+    <script>
+        
+        class Punto{
+            constructor(kevin){
+                this.x = kevin.x      
+                this.y = kevin.y   
+            }
+            
+            moverEnX(x){
+                this.x += x
+            }
+            moverEnY(y){
+                this.y += y
+            }
+            distancia(p){
+                const x = this.x - p.x;
+                const y = this.y - p.y;
+                return Math.sqrt(x*x+y*y)
+            }
+        }
+        
+        const p1 = new Punto({x:0, y:4})
+        const p2 = new Punto({x:3, y:0})
+            
+        console.log(p1.distancia(p2))
+        console.log(p2.distancia(p1))
+        p1.moverEnX(10)
+        console.log(p1.distancia(p2))
+        p2.moverEnY(-5) 
+        console.log(p1.distancia(p2))
+        
+    </script>
+</body>
+</html>
