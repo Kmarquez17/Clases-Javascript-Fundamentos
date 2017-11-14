@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">     
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+     
+<body>
+    <script>
+        //Los closures son funciones que manejan variables independientes. En otras palabras, la función definida en el closure "recuerda" el entorno en el que se ha creado.
+        
+        function saludarFamilia(apellido){
+            return function saludarMiembrodeFamilia(nombre){
+                console.log(`Hola ${nombre} ${apellido}`)
+            }
+        }
+        /*function saludarMarquez(nombre){
+            console.log(`Hola ${nombre} Marquez`)
+        }
+        function saludarRodriguez(nombre){
+            console.log(`Hola ${nombre} Rodriguez`)
+        }*/
+        
+        function makePrefixer(prefijos){
+            return function makeName(name){
+                console.log(`${prefijos}${name}`)
+            }
+        }
+        
+        const prefijoRe = makePrefixer('Re')
+        const prefijoIn = makePrefixer('In')
+        
+        const saludarMarquez = saludarFamilia('Marquez')
+        const saludarRodriguez = saludarFamilia('Rodriguez')
+        
+        
+        saludarMarquez('Kevin')
+        saludarMarquez('Carlos')
+        saludarMarquez('Javier')
+        saludarMarquez('Isamar')
+                       
+        saludarRodriguez('Josseling')
+        saludarRodriguez('Leonardo')
+        saludarRodriguez('Yessenia')
+        saludarRodriguez('Marlon')
+        
+        prefijoRe('procesar')
+        prefijoIn('dependencia')
+    </script>
+</body>
+</html>
