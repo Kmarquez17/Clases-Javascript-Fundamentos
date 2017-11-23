@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">     
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+     
+<body>
+    <script>
+           class Persona{
+               constructor(nombre, amigos){
+                   this.nombre = nombre
+                   this.amigos = amigos || []
+               }
+           
+        listarAmigos(){
+           //const _this =  this --> se le asigna a una variable global de la funcion y que solo el this dentro dela funcion del metodo no es reconocida.
+           this.amigos.forEach(function (amigo){
+             console.log(`Hola mi nombre es ${this.nombre} y soy amigo de ${amigo}`)   
+           }.bind(this))
+            
+        }
+    }
+        const kevin = new Persona("Kevin",["Alberto","Lucas","Juan"])
+        kevin.listarAmigos()
+    </script>
+</body>
+</html>
