@@ -9,18 +9,18 @@
      
 <body>
     <script>
-           class Persona{
-               constructor(nombre, amigos){
-                   this.nombre = nombre
-                   this.amigos = amigos || []
-               }
+    class Persona{
+        constructor(nombre, amigos){
+           this.nombre = nombre
+           this.amigos = amigos || []
+        }
            
         listarAmigos(){
            //const _this =  this --> se le asigna a una variable global de la funcion y que solo el this dentro dela funcion del metodo no es reconocida.
-           this.amigos.forEach(function (amigo){
+           this.amigos.forEach((amigo) => {
              console.log(`Hola mi nombre es ${this.nombre} y soy amigo de ${amigo}`)   
-           }.bind(this))
-            
+           }/*.bind(this)*/)
+          
         }
     }
         const kevin = new Persona("Kevin",["Alberto","Lucas","Juan"])
