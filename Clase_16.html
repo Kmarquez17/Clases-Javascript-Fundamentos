@@ -4,7 +4,6 @@
     <meta charset="utf-8">     
     <title></title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css">
 </head>
      
 <body>
@@ -13,14 +12,21 @@
             nombre: 'Kevin',
             apellido: 'Marquez'
         }
-        function saluda(alguien,veces){
-            
+        
+        const juan = {
+            nombre: 'Juan',
+            apellido: 'Lopez'
+        }
+        function saluda(veces,uppercase){
+            let str= `Hola ${this.nombre} ${this.apellido}`
+            str = uppercase ? str.toUpperCase() : str
             for(let i=0; i<=veces; i++){
-                console.log(`Hola ${this.nombre} ${thi.apellido}`)
+                console.log(str)
             }
         }
         
-        saluda(3)
+        saluda.call(kevin,3,true)
+        saluda.apply(juan,[3,true])
     </script>
 </body>
 </html>
