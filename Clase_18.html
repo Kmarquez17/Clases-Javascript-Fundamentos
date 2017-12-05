@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">     
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+     
+<body>
+   <h1 id="timer">han pasado 0 segundo</h1>
+   <h1 id="agenda">Estoy despertando</h1>
+   <button id="TimeOut">Cancelar TimeOut</button>
+   <button id="Intervalo">Cancelar Intervalo</button>
+   
+    <script>
+        const timer = document.getElementById('timer')
+        let cont = 0;
+       //Interval    
+       const intervalo =  setInterval(() => {
+            cont++
+            if (cont == 1) {
+                timer.textContent = `han pasado ${cont} segundo`
+            }
+            else
+                {
+                    timer.textContent = `han pasado ${cont} segundos` 
+                }
+            
+            //console.log(`han pasodo 1 tiempo`)
+        },1000)
+       
+       const $cancelarI = document.getElementById('Intervalo')
+       $cancelarI.addEventListener('click',() =>{
+            clearInterval(intervalo)
+       })
+        
+        //Timeout
+       const timeout = setTimeout(() => {
+            document.write('Hello')
+            alert(`Hola Kevin`)
+        },5000) 
+       
+        const $cancelar = document.getElementById('TimeOut')
+        $cancelar.addEventListener('click',()=>{
+            clearTimeout(timeout)        
+        })   
+         
+        
+        //callbakc
+        const DESPERTAR = 30000;
+        const DUCHA = 20000;
+        const VESTIRSE = 20000;
+        const DESAYUNAR = 30000;
+        const PLATZI = 50000;
+        
+        const $agenda = document.getElementById('agenda')
+        
+        setTimeout(() => {
+            $agenda.textContent = 'Ahora me estoy duchando..!'
+            setTimeout(() => {
+                $agenda.textContent = 'Ahora me estoy vistiendo..!'
+                setTimeout(() => {
+                    $agenda.textContent = 'Ahora estoy desayunando..!'
+                    setTimeout(() => {
+                        $agenda.textContent = 'Ahora estoy estudiando platzi..!'
+                         setTimeout(() => {
+                                $agenda.textContent = 'Mi agenda termino..! Libre '
+                            },PLATZI)
+                    },DESAYUNAR)
+                },VESTIRSE)
+            },DUCHA)
+                
+                
+                       
+        },DESPERTAR)
+                
+    </script>
+</body>
+</html>

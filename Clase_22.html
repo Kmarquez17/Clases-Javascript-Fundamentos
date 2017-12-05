@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">     
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+     
+<body>
+  <script>
+      function fibonacci(numero, memoria = {}){
+          let a = 0, b = 1
+          return {
+              next: function(){
+                  let f = a
+                  a = b 
+                  b = f + a
+                  return {value:f, donde: false}
+              }
+          }
+      }
+      
+      const fibo = fibonacci()
+      fibo.next().value
+      
+  </script>
+</body>
+</html>
+
+
