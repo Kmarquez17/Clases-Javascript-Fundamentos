@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">     
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+     
+<body>
+    <script>
+        //kilogramos a libras
+        // resultado = cantidad libra  * 2.20462
+        let cantidadLibra = 20
+        const libras = generar(cantidadLibra) 
+        function convertir() {
+        for (let i = 0; i < cantidadLibra; i++) {
+          setTimeout(() => calcular(libras[i]), 
+            500 * (i+1))
+        }
+            
+        }
+
+            function calcular(cantidadLibra) {
+                let resultado =  cantidadLibra * 2.20462
+                console.log(`Estos Kilogramos ${resultado.toFixed(5)} dan a ${cantidadLibra}`)
+            }
+        
+
+        function generar(cantidadLibra) {
+        return new Array(cantidadLibra).fill(0).map(generarTeclaAleatoria)
+      }
+
+      function generarTeclaAleatoria() {
+        const min = 1
+        const max = 90
+        return Math.floor(Math.round(Math.random() * (max - min) + min))
+      }
+    </script>
+</body>
+</html>
